@@ -1,18 +1,21 @@
+import { AppBar, Button, Toolbar, Typography } from '@mui/material';
 import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import './App.css';
 import Login from './Login';
-import logo from './logo.svg';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <nav>
-            <Link to="/login">Login</Link>
-          </nav>
-        </header>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" style={{ flexGrow: 1 }}>
+              PrepaidRail
+            </Typography>
+            <Button color="inherit" component={Link} to="/login">
+              Login
+            </Button>
+          </Toolbar>
+        </AppBar>
         <Routes>
           <Route path="/login" element={<Login />} />
         </Routes>
