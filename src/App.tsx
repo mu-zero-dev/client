@@ -1,5 +1,6 @@
 import { AppBar, Button, Toolbar, Typography } from '@mui/material';
 import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import Dashboard from './Dashboard';
 import Login from './Login';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         </AppBar>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/dashboard/*" element={<Dashboard />} />
         </Routes>
       </div>
     </Router>

@@ -25,6 +25,7 @@ const Login = () => {
             return;
         }
         alert('Login successful!');
+        navigate('/dashboard');
     };
 
     React.useEffect(() => {
@@ -32,8 +33,8 @@ const Login = () => {
     }, []);
 
     return (
-        <Box display="flex" justifyContent="center" alignItems="center" height="100vh" bgcolor="#f4f4f4">
-            <Paper elevation={3} style={{ padding: '20px', width: '300px' }}>
+        <Box display="flex" justifyContent="center" alignItems="center" height="100vh" bgcolor="#f4f4f4" sx={{ px: 2 }}>
+            <Paper elevation={3} sx={{ p: 3, width: { xs: '100%', sm: '400px' } }}>
                 <form onSubmit={handleLogin}>
                     <Typography variant="h5" component="h2" gutterBottom>
                         Login
@@ -69,7 +70,7 @@ const Login = () => {
                         onChange={(e) => setCaptchaInput(e.target.value)}
                         required
                     />
-                    <Button type="submit" variant="contained" color="primary" fullWidth style={{ marginTop: '10px' }}>
+                    <Button type="submit" variant="contained" color="primary" fullWidth sx={{ mt: 2 }}>
                         Login
                     </Button>
                     <Button
@@ -77,7 +78,7 @@ const Login = () => {
                         variant="outlined"
                         color="secondary"
                         fullWidth
-                        style={{ marginTop: '10px' }}
+                        sx={{ mt: 2 }}
                         onClick={() => navigate('/')}
                     >
                         Back to Home
